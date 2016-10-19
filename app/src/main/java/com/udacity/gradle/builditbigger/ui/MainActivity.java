@@ -1,25 +1,16 @@
 package com.udacity.gradle.builditbigger.ui;
 
-import android.content.Context;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.google.api.client.extensions.android.http.AndroidHttp;
-import com.google.api.client.extensions.android.json.AndroidJsonFactory;
-import com.google.api.client.googleapis.services.AbstractGoogleClientRequest;
-import com.google.api.client.googleapis.services.GoogleClientRequestInitializer;
 import com.udacity.gradle.builditbigger.R;
 import com.udacity.gradle.builditbigger.tasks.EndpointsAsyncTask;
 
-import java.io.IOException;
-
 import display.a.joke.jokedisplayer.JokeDisplayerActivity;
-import joke.server.gcemodule.myApi.MyApi;
 
 
 public class MainActivity extends AppCompatActivity {

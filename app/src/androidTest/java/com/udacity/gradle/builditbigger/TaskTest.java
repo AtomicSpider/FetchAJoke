@@ -5,13 +5,10 @@ import android.util.Log;
 
 import com.udacity.gradle.builditbigger.tasks.EndpointsAsyncTask;
 
-import org.junit.Assert;
 import org.junit.Test;
-import org.junit.internal.runners.statements.Fail;
 import org.junit.runner.RunWith;
 
 import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.fail;
 
 /**
  * Project : FinalProject

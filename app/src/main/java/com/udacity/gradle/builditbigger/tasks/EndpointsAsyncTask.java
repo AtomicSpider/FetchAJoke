@@ -1,18 +1,14 @@
 package com.udacity.gradle.builditbigger.tasks;
 
-import android.content.Context;
-import android.content.Intent;
 import android.os.AsyncTask;
 
 import com.google.api.client.extensions.android.http.AndroidHttp;
 import com.google.api.client.extensions.android.json.AndroidJsonFactory;
 import com.google.api.client.googleapis.services.AbstractGoogleClientRequest;
 import com.google.api.client.googleapis.services.GoogleClientRequestInitializer;
-import com.udacity.gradle.builditbigger.ui.MainActivity;
 
 import java.io.IOException;
 
-import display.a.joke.jokedisplayer.JokeDisplayerActivity;
 import joke.server.gcemodule.myApi.MyApi;
 
 /**

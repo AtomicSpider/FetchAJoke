@@ -12,21 +12,21 @@ public class JokeFetcher {
             case 1:
                 return "A group of protesters in front of a physics lab:\n" +
                         "\n" +
-                        "“What do we want?\"\n" +
+                        "\"What do we want?\"\n" +
                         "\n" +
-                        "“Time travel\"\n" +
+                        "\"Time travel\"\n" +
                         "\n" +
-                        "“When do we want it?\"\n" +
+                        "\"When do we want it?\"\n" +
                         "\n" +
-                        "“Irrelevant.\"";
+                        "\"Irrelevant.\"";
             case 2:
                 return "Two atoms are walking along. One of them says:\n" +
                         "\n" +
-                        "“Oh, no, I think I lost an electron.\"\n" +
+                        "\"Oh, no, I think I lost an electron.\"\n" +
                         "\n" +
-                        "“Are you sure?\"\n" +
+                        "\"Are you sure?\"\n" +
                         "\n" +
-                        "“Yes, I'm positive.\"";
+                        "\"Yes, I'm positive.\"";
             case 3:
                 return "Why couldn't the chemist laugh at the Queen's fart?\n" +
                         "\n" +
