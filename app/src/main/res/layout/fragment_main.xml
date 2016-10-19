@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/activity_vertical_margin"
-    tools:context=".MainActivityFragment">
+    tools:context=".ui.MainActivityFragment">
 
     <ImageView
         android:id="@+id/instructions_image_view"
@@ -17,6 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/instructions_image_view"
+        android:layout_margin="10dp"
         android:onClick="tellJoke"
         android:text="@string/button_text"
         android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
