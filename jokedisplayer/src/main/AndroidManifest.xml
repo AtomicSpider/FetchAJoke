@@ -1,0 +1,10 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="display.a.joke.jokedisplayer">
+
+    <application>
+        <activity
+            android:name=".JokeDisplayerActivity"
+            android:label="@string/joke_display_label" />
+    </application>
+
+</manifest>

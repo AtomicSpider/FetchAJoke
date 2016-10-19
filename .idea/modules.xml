@@ -3,7 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/FinalProject.iml" filepath="$PROJECT_DIR$/FinalProject.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GCEModule/GCEModule.iml" filepath="$PROJECT_DIR$/GCEModule/GCEModule.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jokedisplayer/jokedisplayer.iml" filepath="$PROJECT_DIR$/jokedisplayer/jokedisplayer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/jokefetcher/jokefetcher.iml" filepath="$PROJECT_DIR$/jokefetcher/jokefetcher.iml" />
     </modules>
   </component>
 </project>
