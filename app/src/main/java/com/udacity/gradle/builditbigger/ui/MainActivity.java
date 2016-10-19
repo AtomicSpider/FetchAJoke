@@ -2,10 +2,10 @@ package com.udacity.gradle.builditbigger.ui;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
+import android.widget.ProgressBar;
 
 import com.udacity.gradle.builditbigger.R;
 import com.udacity.gradle.builditbigger.tasks.EndpointsAsyncTask;
@@ -15,43 +15,37 @@ import display.a.joke.jokedisplayer.JokeDisplayerActivity;
 
 public class MainActivity extends AppCompatActivity {
 
+    private ProgressBar mProgressBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
+        mProgressBar = (ProgressBar) findViewById(R.id.progressBar);
     }
 
     public void tellJoke(View view) {
-        new EndpointsAsyncTask(new EndpointsAsyncTask.Callback() {
+        displayJokeWithProgressbar();
+    }
+
+    public void displayJokeWithProgressbar() {
+        mProgressBar.setVisibility(View.VISIBLE);
+
+        //delay to show progressbar
+        (new Handler()).postDelayed(new Runnable() {
             @Override
-            public void onTaskFinish(String joke) {
-                Intent mIntent = new Intent(MainActivity.this, JokeDisplayerActivity.class);
-                mIntent.putExtra("joke", joke);
-                startActivity(mIntent);
+            public void run() {
+                //fetch joke
+                new EndpointsAsyncTask(new EndpointsAsyncTask.Callback() {
+                    @Override
+                    public void onTaskFinish(String joke) {
+                        mProgressBar.setVisibility(View.GONE);
+                        Intent mIntent = new Intent(MainActivity.this, JokeDisplayerActivity.class);
+                        mIntent.putExtra("joke", joke);
+                        startActivity(mIntent);
+                    }
+                }).execute();
             }
-        }).execute();
+        }, 1000);
     }
 }

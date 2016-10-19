@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Jokes App</string>
+    <string name="app_name">Jokes App Pro</string>
     <string name="cont_instructions">Tell a joke.</string>
     <string name="button_text">Tell Joke</string>
     <string name="action_settings">Settings</string>
