@@ -23,7 +23,7 @@ public class TaskTest {
             @Override
             public void onTaskFinish(String joke) {
                 Log.d("JOKE_TEST", joke);
-                assertFalse("EmptyString", !joke.isEmpty());
+                assertFalse("EmptyString", true);
             }
         }).execute();
     }
