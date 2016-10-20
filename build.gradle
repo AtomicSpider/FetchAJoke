@@ -17,3 +17,42 @@ allprojects {
         jcenter()
     }
 }
+
+task gceServerStart(dependsOn: ':GCEModule:appengineRun') {
+    project(":GCEModule").afterEvaluate { GCEModule ->
+        GCEModule.extensions.appengine.daemon = true
+    }
+    doLast {
+        println '~~gceTask: Server Started.'
+    }
+}
+
+task gceConnectedAndroidTest(dependsOn: ':app:connectedAndroidTest') {
+    mustRunAfter gceServerStart
+    finalizedBy 'gceTest'
+    doLast {
+        println '~~gceTask: connectedAndroidTest Finished !'
+    }
+}
+
+task gceTest(dependsOn: [gceServerStart, gceConnectedAndroidTest]) {
+    doLast {
+        println '~~gceTask: Testing 1 2 3... Done !'
+    }
+}
+
+task gceAppengineStop(dependsOn: ':GCEModule:appengineStop') {
+    mustRunAfter gceTest
+}
+
+task gceServerStop(dependsOn: [gceTest, gceAppengineStop]) {
+    doLast {
+        println '~~gceTask: Server Stopped.'
+    }
+}
+
+task gceTask(dependsOn: gceServerStop) {
+    doLast {
+        println '~~gceTask: All Done !'
+    }
+}
